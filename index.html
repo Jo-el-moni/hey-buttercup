@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Just for you</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="verifyScreen" class="screen active">
+    <h1>Just a quick Verification!</h1>
+    <p>To be sure it's you</p>
+    <label>
+        Enter Password:
+    <input type="password" placeholder="Type here" id="password" name="password">
+     </label>
+     <p id="hint">Hint: I'm Jojojo, what are you?</p>
+     <button class="btn-primary" id="verifyBtn">Verify</button>
+  </div>
+
+<!-- MESSAGE SCREEN -->
+  <div class="screen" id="messageScreen">
+    <div id="messages"></div>
+
+    <div class="proposal" id="proposalCard">
+      <h2>Can I be Your Man?</h2>
+
+      <div class="btn-group">
+        <button class="yes" id="yesBtn">Yes 💛</button>
+        <button class="no" id="noBtn">No 🙈</button>
+      </div>
+
+      <div class="result" id="resultText"></div>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
