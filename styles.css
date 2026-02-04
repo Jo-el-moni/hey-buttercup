@@ -7,7 +7,7 @@
 
 body {
   height: 100vh;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(135deg, #250f27, #412043, #ae48b5);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -54,8 +54,8 @@ input {
   width: 100%;
   margin-top: 12px;
   padding: 14px;
-  background: #9466ff;
-  color: #000;
+  background: #d145bf;
+  color: #ffffff;
   border-radius: 8px;
   border: none;
   font-size: 1rem;
@@ -64,7 +64,7 @@ input {
 }
 
 .btn-primary:hover{
-    background: #f1bb3f;
+    background: #bb2bb4;
 }
 
 .hint {
@@ -162,7 +162,7 @@ input {
   display: none;
 }
 
-confetti {
+.confetti {
   position: fixed;
   top: 0;
   width: 8px;

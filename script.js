@@ -1,5 +1,5 @@
 // CHANGE THIS PASSWORD
-const correctPassword = "buttercup";
+const correctPassword = "Buttercup";
 
 const verifyBtn = document.getElementById("verifyBtn");
 const passwordInput = document.getElementById("password");
@@ -14,12 +14,17 @@ const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const resultText = document.getElementById("resultText");
 
+const bgMusic = document.getElementById("bgMusic");
+
+
 
 const lines = [
-  "Hey, Buttercup 🖤",
+  "Hey, Buttercup ✨",
   "So, you know I've got this feeling",
   "A feeling that we were meant to be together",
-  "And I would really love to explore this possibility",
+  "Cos my day is never complete without you",
+  "Your joy has become my ecstasy, and your pain my misery",
+  "And I would really be a damn fool if I let you slip",
   "So..."
 ];
 
@@ -43,6 +48,10 @@ verifyBtn.addEventListener("click", () => {
   ) {
     verifyScreen.classList.remove("active");
     messageScreen.classList.add("active");
+
+      bgMusic.volume = 0.4;
+  bgMusic.play().catch(() => {});
+
     startMessages();
   } else {
     alert("Hmm… that’s not quite right 💭");
@@ -73,7 +82,9 @@ yesBtn.addEventListener("click", () => {
   resultText.textContent =
     "You just made me the happiest man alive 🖤";
 
-      sendToWhatsApp("YES 🎉");
+      setTimeout(() => {
+    sendToWhatsApp("YES 🎉");
+  }, 3000);
 
   yesBtn.disabled = true;
   noBtn.disabled = true;
@@ -102,7 +113,9 @@ noBtn.addEventListener("click", () => {
       "I respect your honesty… still glad I asked 💫";
 
       
-   sendToWhatsApp("NO 💫");
+   setTimeout(() => {
+    sendToWhatsApp("NO 💫");
+  }, 2000);
 
     noBtn.disabled = true;
     yesBtn.disabled = true;
@@ -130,7 +143,7 @@ function launchConfetti() {
 function sendToWhatsApp(answer) {
   const phoneNumber = "2349034532296"; // <-- YOUR WhatsApp number (Nigeria format)
   const message = encodeURIComponent(
-    `Her answer is: ${answer} 💛`
+    `My answer is: ${answer} `
   );
 
   window.open(
