@@ -82,9 +82,7 @@ yesBtn.addEventListener("click", () => {
   resultText.textContent =
     "You just made me the happiest man alive 🖤";
 
-      setTimeout(() => {
-    sendToWhatsApp("YES 🎉");
-  }, 3000);
+    openWhatsAppWithDelay("YES 🎉");
 
   yesBtn.disabled = true;
   noBtn.disabled = true;
@@ -113,9 +111,8 @@ noBtn.addEventListener("click", () => {
       "I respect your honesty… still glad I asked 💫";
 
       
-   setTimeout(() => {
-    sendToWhatsApp("NO 💫");
-  }, 2000);
+  openWhatsAppWithDelay("NO 💫");
+
 
     noBtn.disabled = true;
     yesBtn.disabled = true;
@@ -150,4 +147,18 @@ function sendToWhatsApp(answer) {
     `https://wa.me/${phoneNumber}?text=${message}`,
     "_blank" 
   );
+}
+
+function openWhatsAppWithDelay(message) {
+  const phoneNumber = "2348012345678"; // your number
+  const encodedMessage = encodeURIComponent(message);
+
+  // Open immediately (user gesture preserved)
+  const waWindow = window.open("", "_blank");
+
+  // Navigate after delay
+  setTimeout(() => {
+    waWindow.location.href =
+      `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  }, 2000);
 }
